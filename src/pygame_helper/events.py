@@ -12,7 +12,7 @@ from pygame.mouse import set_cursor
 from pygame.event import get as get_events
 from pygame.time import get_ticks
 
-from classes import Segment
+from pygame_helper.classes import Segment
 
 # CONSTANTS
 LEFT_BUTTON = 1
@@ -32,6 +32,19 @@ DOWN = 1
 
 HORIZONTAL = "h"
 VERTICAL = "v"
+
+# GENERAL
+def ticks_to_seconds(ticks:int)->float:
+    """
+    Convert ticks to seconds.
+    """
+    return ticks/1000
+
+def seconds_to_ticks(seconds:float)->int:
+    """
+    Convert seconds to ticks.
+    """
+    return int(seconds*1000)
 
 # RAYCAST
 def raycast(origin:Tuple[int,int],direction:Tuple[float,float],lenght:int,sprites:list,draw:bool=False,surface:pygame.Surface=None,color:Union[str,Tuple[int,int,int]]="white",thicness:int=2)->list:

@@ -4,12 +4,12 @@ from pygame.constants import *
 from pygame.locals import *
 from typing import Tuple
 # modules imports
-from graphics import *
-from events import *
-from sprites import *
-from classes import *
-from saving import *
-import graphics,events,sprites,classes,saving
+from pygame_helper.graphics import *
+from pygame_helper.events import *
+from pygame_helper.sprites import *
+from pygame_helper.classes import *
+from pygame_helper.saving import *
+from pygame_helper import graphics,events,sprites,classes,saving
 
 """
 This is the main modules with 3 main functions. The content of the other modules are all imported aswell.

@@ -2,7 +2,8 @@
 FILE FOR TESTING NEW FEATURES
 """
 
-import helper,pygame,random
+import pygame,random
+from pygame_helper import helper
 
 screen,clock = helper.init((800,600),debug_activated=True)
 

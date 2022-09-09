@@ -1,8 +1,8 @@
 import pygame, math
-from graphics import *
+from pygame_helper.graphics import *
 from random import uniform, choice
 from typing import Union,List, Tuple
-import sprites
+import pygame_helper.sprites as sprites
 from pygame import Rect
 from pygame.font import Font
 # pathfining
@@ -1488,17 +1488,66 @@ class TextButton():
 
 		return action
 
-# TIMERS
+# TIME
+class Stopwatch():
+	"""
+	Easy way to control time in pygame.
+	"""
+	def __init__(self,start=False):
+		self.start_time = 0
+		self.timesteps = []
+		if start:
+			self.start()
+
+	def add_timestep(self):
+		"""
+		Add a timestep to the list.
+		"""
+		self.timesteps.append(pygame.time.get_ticks()-self.start_time)
+
+	def start(self):
+		"""
+		Start the stopwatch.
+		"""
+		self.start_time = pygame.time.get_ticks()
+
+	def stop(self):
+		"""
+		Stop the stopwatch.
+
+		Return both the time passed and the timesteps.
+		"""
+		time_passed = pygame.time.get_ticks()-self.start_time
+		timesteps = list(self.timesteps)
+		self.start_time = 0
+		self.timesteps.clear()
+		return time_passed,timesteps
+
+	@property
+	def time_passed(self):
+		if self.start_time == 0:
+			return 0
+		return pygame.time.get_ticks()-self.start_time
+	
 class CooldownTimer():
 	"""
 	A timer, based on a cooldown. Not recommended.
 	"""
-	def __init__(self,cooldown:int):
+	def __init__(self,cooldown:int, func=None):
 
 		self.cooldown = cooldown
 		self.timer = cooldown
 		self.finished = False
+		self.func = func
 
+	@property
+	def time_passed(self):
+		return self.cooldown-self.timer
+
+	@property
+	def time_left(self):
+		return self.timer
+	
 	def update(self,dt:float=1.0)->None:
 		"""
 		Update the timer.
@@ -1509,6 +1558,8 @@ class CooldownTimer():
 		    # set the status finished to true
 		    self.finished = True
 		    self.timer = 0
+		    if self.func:
+		    	self.func()
 
 	def reset(self)->None:
 		"""
@@ -1529,6 +1580,14 @@ class Timer:
 		self.active = False
 		if start_active:
 			self.activate()
+
+	@property
+	def time_passed(self):
+		return pygame.time.get_ticks()-self.start_time
+
+	@property
+	def time_left(self):
+		return self.duration - (pygame.time.get_ticks()-self.start_time)
 
 	def activate(self)->None:
 		"""

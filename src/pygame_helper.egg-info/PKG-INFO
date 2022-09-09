@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: pygame-helper
+Version: 1.0.1
+Summary: Helper functions and classes to code in pygame
+Home-page: https://github.com/Damus666/pygame_helper
+Author: Damus666
+Author-email: macchia.cuordileone@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Damus666/pygame_helper/issues
+Project-URL: repository, https://github.com/Damus666/pygame_helper
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Pygame Helper
+
+A collection of varius modules that contains a lot of helpful functions constants and classes to make your pygame experience easier and faster.
+MIT License
+
+Copyright (c) 2022 Damus666
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

@@ -1,5 +1,5 @@
 import pygame
-from graphics import *
+from pygame_helper.graphics import *
 from typing import Union, Tuple,List, Dict,Any,Type
 # pygame shortcuts
 from pygame.sprite import GroupSingle,spritecollide,spritecollideany
